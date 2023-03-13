@@ -75,7 +75,10 @@
                     .toggleClass(_this.settings.collapseIcon);
                 // navigate to href if present
                 if (e.target.hasAttribute('href')) {
-                    if (_this.settings.openNodeLinkOnNewTab) {
+                    if (_this.settings.target) {
+                        window.open(e.target.getAttribute('href'), _this.settings.target);
+                    }
+                    else if (_this.settings.openNodeLinkOnNewTab) {
                         window.open(e.target.getAttribute('href'), '_blank');
                     }
                     else {
